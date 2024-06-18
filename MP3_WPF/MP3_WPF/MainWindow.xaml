@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MP3_WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="650" Width="500">
+        WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="778" Width="500" MaxWidth="500" MinWidth="500" MinHeight="780" MaxHeight="780">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="Black"/>
@@ -19,9 +20,9 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Label x:Name="lbHeader" Content="MT MUSIC APP" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" FontSize="48" FontFamily="OCR A Extended" Margin="27,0,0,0"/>
+        <Label x:Name="lbHeader" Content="MT MUSIC APP" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" FontSize="48" FontFamily="OCR A Extended" Margin="10,0,0,0"/>
 
-        <Button x:Name="btnQuit" Content="Quit" HorizontalAlignment="Left" VerticalAlignment="Center" Width="64" Foreground="White" BorderBrush="#FF1D0D4A" Margin="390,0,0,0">
+        <Button x:Name="btnQuit" Content="Quit" HorizontalAlignment="Left" VerticalAlignment="Center" Width="64" Foreground="White" BorderBrush="#FF1D0D4A" Margin="390,0,0,0" Click="btnQuit_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
@@ -37,51 +38,43 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <ToggleButton Grid.Column="0" Content="VIỆT NAM" Foreground="White">
-                <ToggleButton.Background>
+            <RadioButton x:Name="btnVN" IsChecked="{Binding IsCheckVN}" Grid.Column="0"  Content="VIỆT NAM" Foreground="White">
+                <RadioButton.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black"/>
                         <GradientStop Color="#FFA3A0FF" Offset="1"/>
                     </LinearGradientBrush>
-                </ToggleButton.Background>
-            </ToggleButton>
-            <ToggleButton Grid.Column="1" Content="US-UK" Foreground="White">
-                <ToggleButton.Background>
+                </RadioButton.Background>
+            </RadioButton>
+            <RadioButton x:Name="btnEU" IsChecked="{Binding IsCheckEU}" Grid.Column="1"  Content="US-UK" Foreground="White">
+                <RadioButton.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black"/>
                         <GradientStop Color="#FFA3A0FF" Offset="1"/>
                     </LinearGradientBrush>
-                </ToggleButton.Background>
-            </ToggleButton>
-            <ToggleButton Grid.Column="2" Content="K-POP" Foreground="White">
-                <ToggleButton.Background>
+                </RadioButton.Background>
+            </RadioButton>
+            <RadioButton x:Name="btnKO" IsChecked="{Binding IsCheckKO}" Grid.Column="2"  Content="K-POP" Foreground="White">
+                <RadioButton.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black"/>
                         <GradientStop Color="#FFA3A0FF" Offset="1"/>
                     </LinearGradientBrush>
-                </ToggleButton.Background>
-            </ToggleButton>
+                </RadioButton.Background>
+            </RadioButton>
         </Grid>
         <Grid Grid.Row="2" Margin="0,45,0,438">
-            <Grid.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </Grid.Background>
-
-            <ListBox x:Name="lbxListSong" HorizontalContentAlignment="Stretch" Margin="0,0,0,-430" Background="#FF372C56">
+            <ListBox x:Name="lbxListSong" HorizontalContentAlignment="Stretch" Margin="0,-30,0,-357" Background="#FF372C56">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Border Height="50" BorderThickness="1" BorderBrush="#FF464646">
-                            <Grid>
+                            <Grid MouseUp="Grid_MouseUp">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="50"></ColumnDefinition>
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
                                 <Grid>
-                                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="18" FontFamily="Palatino Linotype"
-        >01</TextBlock>
+                                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="18" FontFamily="Palatino Linotype">01</TextBlock>
                                 </Grid>
                                 <Grid Grid.Column="1">
                                     <Grid.RowDefinitions>
@@ -98,14 +91,13 @@
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Foreground="Snow" FontSize="14" Grid.ColumnSpan="2" FontFamily="Segoe Print">Ten ca sy</TextBlock>
                                     </Grid>
-
                                 </Grid>
                             </Grid>
                         </Border>
-
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
         </Grid>
+        <Grid x:Name="gdPlaySong" HorizontalAlignment="Center" Height="73" Margin="0,593,0,0" Grid.Row="2" VerticalAlignment="Top" Width="480" Background="#FF372C56"/>
     </Grid>
 </Window>

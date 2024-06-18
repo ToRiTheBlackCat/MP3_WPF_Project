@@ -18,3 +18,4 @@ C:\Users\PC\Desktop\KTPM-DH FPT\MP3_WPFProject\MP3_WPF_Project\MP3_WPF\MP3_WPF\o
 C:\Users\PC\Desktop\KTPM-DH FPT\MP3_WPFProject\MP3_WPF_Project\MP3_WPF\MP3_WPF\obj\Debug\net8.0-windows\MP3_WPF.pdb
 C:\Users\PC\Desktop\KTPM-DH FPT\MP3_WPFProject\MP3_WPF_Project\MP3_WPF\MP3_WPF\obj\Debug\net8.0-windows\MP3_WPF.genruntimeconfig.cache
 C:\Users\PC\Desktop\KTPM-DH FPT\MP3_WPFProject\MP3_WPF_Project\MP3_WPF\MP3_WPF\obj\Debug\net8.0-windows\ref\MP3_WPF.dll
+C:\Users\PC\Desktop\KTPM-DH FPT\MP3_WPFProject\MP3_WPF_Project\MP3_WPF\MP3_WPF\obj\Debug\net8.0-windows\MP3_WPF.sourcelink.json
